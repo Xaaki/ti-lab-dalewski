@@ -47,6 +47,18 @@ body {
     color: #1a00b8;
 }
 
+/* Przycisk Menu - domyślnie ukryty na dużych ekranach */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid #4426FF;
+    color: #4426FF;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* Sekcje */
 .section {
     max-width: 1000px;
@@ -77,7 +89,6 @@ body {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Efekt uniesienia karty po najechaniu (Bonus) */
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -119,7 +130,7 @@ body {
     color: #4426FF;
 }
 
-/* Tabela cennika (Zadanie 4) */
+/* Tabela cennika */
 .price-table {
     width: 100%;
     border-collapse: collapse;
@@ -144,7 +155,7 @@ body {
     text-align: right;
 }
 
-/* Stopka (Zadanie 4) */
+/* Stopka */
 .site-footer {
     background-color: #111111;
     color: #ffffff;
@@ -170,10 +181,26 @@ body {
     text-decoration: underline;
 }
 
-/* Media query poniżej 600px - RWD (Bonus) */
+/* Media query poniżej 600px - RWD dla telefonu */
 @media (max-width: 600px) {
     .site-header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block; /* Pokaż przycisk na telefonach */
+    }
+
+    .menu {
+        display: none; /* Domyślnie ukryj menu na telefonach */
+        width: 100%;
         flex-direction: column;
         gap: 12px;
+        padding-top: 16px;
+    }
+
+    /* Klasa dodawana przez app.js po kliknięciu w button */
+    .menu.menu--open {
+        display: flex; /* Pokaż rozwijaną nawigację */
     }
 }
