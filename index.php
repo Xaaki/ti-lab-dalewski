@@ -1,6 +1,14 @@
 <?php
 $firma = 'Szprycha';
 $rok = date('Y');
+
+$cennik = [
+    ['nazwa' => 'Regulacja hamulców (przód + tył)', 'cena' => 40],
+    ['nazwa' => 'Regulacja przerzutek (przód + tył)', 'cena' => 50],
+    ['nazwa' => 'Centrowanie koła', 'cena' => 60],
+    ['nazwa' => 'Wymiana dętki / opony', 'cena' => 30],
+    ['nazwa' => 'Czyszczenie i smarowanie napędu', 'cena' => 80],
+];
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -52,7 +60,7 @@ $rok = date('Y');
             </div>
         </section>
 
-        <!-- Sekcja 2: Cennik (Zadanie 4) -->
+        <!-- Sekcja 2: Cennik -->
         <section id="cennik" class="section">
             <h2>Szczegółowy Cennik</h2>
             <table class="price-table">
@@ -63,32 +71,18 @@ $rok = date('Y');
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Regulacja hamulców (przód + tył)</td>
-                        <td class="num">40 zł</td>
-                    </tr>
-                    <tr>
-                        <td>Regulacja przerzutek (przód + tył)</td>
-                        <td class="num">50 zł</td>
-                    </tr>
-                    <tr>
-                        <td>Centrowanie koła</td>
-                        <td class="num">60 zł</td>
-                    </tr>
-                    <tr>
-                        <td>Wymiana dętki / opony</td>
-                        <td class="num">30 zł</td>
-                    </tr>
-                    <tr>
-                        <td>Czyszczenie i smarowanie napędu</td>
-                        <td class="num">80 zł</td>
-                    </tr>
+                    <?php foreach ($cennik as $usluga): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($usluga['nazwa']) ?></td>
+                            <td class="num"><?= $usluga['cena'] ?> zł</td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </section>
     </main>
 
-    <!-- Stopka: Kontakt (Zadanie 4) -->
+    <!-- Stopka: Kontakt -->
     <footer id="kontakt" class="site-footer">
         <h2>Kontakt</h2>
         <p><strong>Pracownia Rowerowa Szprycha</strong></p>
