@@ -37,6 +37,7 @@ body {
 
 .menu {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -49,6 +50,18 @@ body {
 
 .menu a:hover {
     color: #1a00b8;
+}
+
+.menu a.menu-login {
+    background-color: #4426FF;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+}
+
+.menu a.menu-login:hover {
+    background-color: #1a00b8;
+    color: #ffffff;
 }
 
 /* Przycisk Menu - domyślnie ukryty na dużych ekranach */

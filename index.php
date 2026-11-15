@@ -36,6 +36,7 @@ $cennik = $pdo->query('SELECT nazwa, cena FROM uslugi ORDER BY cena')->fetchAll(
             <a href="#uslugi">Usługi</a>
             <a href="#cennik">Cennik</a>
             <a href="#kontakt">Kontakt</a>
+            <a href="login.php" class="menu-login">Login</a>
         </nav>
     </header>
 
